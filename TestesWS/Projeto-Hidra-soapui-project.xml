@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Projeto Hidra" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="HidraControl/hidraControlSoapBinding" type="wsdl" bindingName="{http://control.hidra/}HidraControl/hidraControlSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/HidraWS/HidraControl/hidraControl?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/HidraWS/HidraControl/hidraControl?wsdl"><con:part><con:url>http://localhost:8080/HidraWS/HidraControl/hidraControl?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="HidraControl/hidraControl" targetNamespace="http://control.hidra/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://control.hidra/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://control.hidra/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="adicionar" type="tns:adicionar"/>
+      <xs:element name="adicionarResponse" type="tns:adicionarResponse"/>
+      <xs:element name="clone" type="tns:clone"/>
+      <xs:element name="cloneResponse" type="tns:cloneResponse"/>
+      <xs:element name="commit" type="tns:commit"/>
+      <xs:element name="commitResponse" type="tns:commitResponse"/>
+      <xs:element name="createBranch" type="tns:createBranch"/>
+      <xs:element name="createBranchResponse" type="tns:createBranchResponse"/>
+      <xs:element name="getLogs" type="tns:getLogs"/>
+      <xs:element name="getLogsResponse" type="tns:getLogsResponse"/>
+      <xs:element name="inicializar" type="tns:inicializar"/>
+      <xs:element name="inicializarResponse" type="tns:inicializarResponse"/>
+      <xs:element name="remove" type="tns:remove"/>
+      <xs:element name="removeResponse" type="tns:removeResponse"/>
+      <xs:element name="showBranch" type="tns:showBranch"/>
+      <xs:element name="showBranchResponse" type="tns:showBranchResponse"/>
+      <xs:element name="status" type="tns:status"/>
+      <xs:element name="statusResponse" type="tns:statusResponse"/>
+      <xs:complexType name="remove">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="filename" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="removeResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createBranch">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nameBranch" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createBranchResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="status">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="statusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="adicionar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fileName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="adicionarResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getLogs">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getLogsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="commit">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="commitResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="inicializar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="localPath" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="inicializarResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="clone">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="remotePath" type="xs:string"/>
+          <xs:element minOccurs="0" name="localPath" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cloneResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="showBranch">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="showBranchResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="clone">
+    <wsdl:part element="tns:clone" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="status">
+    <wsdl:part element="tns:status" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cloneResponse">
+    <wsdl:part element="tns:cloneResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="remove">
+    <wsdl:part element="tns:remove" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeResponse">
+    <wsdl:part element="tns:removeResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="statusResponse">
+    <wsdl:part element="tns:statusResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inicializarResponse">
+    <wsdl:part element="tns:inicializarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="commitResponse">
+    <wsdl:part element="tns:commitResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="adicionar">
+    <wsdl:part element="tns:adicionar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="adicionarResponse">
+    <wsdl:part element="tns:adicionarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="commit">
+    <wsdl:part element="tns:commit" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="showBranchResponse">
+    <wsdl:part element="tns:showBranchResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="showBranch">
+    <wsdl:part element="tns:showBranch" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLogs">
+    <wsdl:part element="tns:getLogs" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createBranch">
+    <wsdl:part element="tns:createBranch" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inicializar">
+    <wsdl:part element="tns:inicializar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createBranchResponse">
+    <wsdl:part element="tns:createBranchResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLogsResponse">
+    <wsdl:part element="tns:getLogsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IHidra">
+    <wsdl:operation name="remove">
+      <wsdl:input message="tns:remove" name="remove"></wsdl:input>
+      <wsdl:output message="tns:removeResponse" name="removeResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createBranch">
+      <wsdl:input message="tns:createBranch" name="createBranch"></wsdl:input>
+      <wsdl:output message="tns:createBranchResponse" name="createBranchResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="status">
+      <wsdl:input message="tns:status" name="status"></wsdl:input>
+      <wsdl:output message="tns:statusResponse" name="statusResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="adicionar">
+      <wsdl:input message="tns:adicionar" name="adicionar"></wsdl:input>
+      <wsdl:output message="tns:adicionarResponse" name="adicionarResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLogs">
+      <wsdl:input message="tns:getLogs" name="getLogs"></wsdl:input>
+      <wsdl:output message="tns:getLogsResponse" name="getLogsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="commit">
+      <wsdl:input message="tns:commit" name="commit"></wsdl:input>
+      <wsdl:output message="tns:commitResponse" name="commitResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inicializar">
+      <wsdl:input message="tns:inicializar" name="inicializar"></wsdl:input>
+      <wsdl:output message="tns:inicializarResponse" name="inicializarResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clone">
+      <wsdl:input message="tns:clone" name="clone"></wsdl:input>
+      <wsdl:output message="tns:cloneResponse" name="cloneResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showBranch">
+      <wsdl:input message="tns:showBranch" name="showBranch"></wsdl:input>
+      <wsdl:output message="tns:showBranchResponse" name="showBranchResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HidraControl/hidraControlSoapBinding" type="tns:IHidra">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="remove">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="remove">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createBranch">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createBranch">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createBranchResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="status">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="status">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="statusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="adicionar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="adicionar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="adicionarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLogs">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getLogs">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLogsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="commit">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="commit">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="commitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inicializar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="inicializar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="inicializarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clone">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="clone">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cloneResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showBranch">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="showBranch">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="showBranchResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HidraControl/hidraControl">
+    <wsdl:port binding="tns:HidraControl/hidraControlSoapBinding" name="HidraControlPort">
+      <soap:address location="http://localhost:8080/HidraWS/HidraControl/hidraControl"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="adicionar" bindingOperationName="adicionar" type="Request-Response" outputName="adicionarResponse" inputName="adicionar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:adicionar>
+         <!--Optional:-->
+         <fileName>teste.txt</fileName>
+      </con:adicionar>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://control.hidra/IHidra/adicionar"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="clone" bindingOperationName="clone" type="Request-Response" outputName="cloneResponse" inputName="clone" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:clone>
+         <!--Optional:-->
+         <remotePath>?</remotePath>
+         <!--Optional:-->
+         <localPath>?</localPath>
+      </con:clone>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://control.hidra/IHidra/clone"/></con:call></con:operation><con:operation isOneWay="false" action="" name="commit" bindingOperationName="commit" type="Request-Response" outputName="commitResponse" inputName="commit" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:commit>
+         <!--Optional:-->
+         <message>?</message>
+      </con:commit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://control.hidra/IHidra/commit"/></con:call></con:operation><con:operation isOneWay="false" action="" name="createBranch" bindingOperationName="createBranch" type="Request-Response" outputName="createBranchResponse" inputName="createBranch" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:createBranch>
+         <!--Optional:-->
+         <nameBranch>?</nameBranch>
+      </con:createBranch>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://control.hidra/IHidra/createBranch"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getLogs" bindingOperationName="getLogs" type="Request-Response" outputName="getLogsResponse" inputName="getLogs" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:getLogs/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://control.hidra/IHidra/getLogs"/></con:call></con:operation><con:operation isOneWay="false" action="" name="inicializar" bindingOperationName="inicializar" type="Request-Response" outputName="inicializarResponse" inputName="inicializar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:inicializar>
+         <!--Optional:-->
+         <localPath>/home/danielli/hidra2015</localPath>
+      </con:inicializar>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://control.hidra/IHidra/inicializar"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="remove" bindingOperationName="remove" type="Request-Response" outputName="removeResponse" inputName="remove" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:remove>
+         <!--Optional:-->
+         <filename>?</filename>
+      </con:remove>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://control.hidra/IHidra/remove"/></con:call></con:operation><con:operation isOneWay="false" action="" name="showBranch" bindingOperationName="showBranch" type="Request-Response" outputName="showBranchResponse" inputName="showBranch" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:showBranch/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://control.hidra/IHidra/showBranch"/></con:call></con:operation><con:operation isOneWay="false" action="" name="status" bindingOperationName="status" type="Request-Response" outputName="statusResponse" inputName="status" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:status/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://control.hidra/IHidra/status"/></con:call></con:operation></con:interface><con:testSuite name="HidraControl/hidraControlSoapBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="adicionar TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="adicionar"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HidraControl/hidraControlSoapBinding</con:interface><con:operation>adicionar</con:operation><con:request name="adicionar"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:adicionar>
+         <!--Optional:-->
+         <fileName>?</fileName>
+      </con:adicionar>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://control.hidra/IHidra/adicionar"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="clone TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="clone"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HidraControl/hidraControlSoapBinding</con:interface><con:operation>clone</con:operation><con:request name="clone"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:clone>
+         <!--Optional:-->
+         <remotePath>?</remotePath>
+         <!--Optional:-->
+         <localPath>?</localPath>
+      </con:clone>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://control.hidra/IHidra/clone"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="commit TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="commit"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HidraControl/hidraControlSoapBinding</con:interface><con:operation>commit</con:operation><con:request name="commit"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:commit>
+         <!--Optional:-->
+         <message>?</message>
+      </con:commit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://control.hidra/IHidra/commit"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createBranch TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="createBranch"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HidraControl/hidraControlSoapBinding</con:interface><con:operation>createBranch</con:operation><con:request name="createBranch"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:createBranch>
+         <!--Optional:-->
+         <nameBranch>?</nameBranch>
+      </con:createBranch>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://control.hidra/IHidra/createBranch"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getLogs TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="getLogs"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HidraControl/hidraControlSoapBinding</con:interface><con:operation>getLogs</con:operation><con:request name="getLogs"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:getLogs/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://control.hidra/IHidra/getLogs"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="inicializar TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="inicializar"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HidraControl/hidraControlSoapBinding</con:interface><con:operation>inicializar</con:operation><con:request name="inicializar"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:inicializar>
+         <!--Optional:-->
+         <localPath>?</localPath>
+      </con:inicializar>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://control.hidra/IHidra/inicializar"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="remove TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="remove"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HidraControl/hidraControlSoapBinding</con:interface><con:operation>remove</con:operation><con:request name="remove"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:remove>
+         <!--Optional:-->
+         <filename>?</filename>
+      </con:remove>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://control.hidra/IHidra/remove"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="showBranch TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="showBranch"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HidraControl/hidraControlSoapBinding</con:interface><con:operation>showBranch</con:operation><con:request name="showBranch"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:showBranch/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://control.hidra/IHidra/showBranch"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="status TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="status"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HidraControl/hidraControlSoapBinding</con:interface><con:operation>status</con:operation><con:request name="status"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/HidraWS/HidraControl/hidraControl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://control.hidra/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:status/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://control.hidra/IHidra/status"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
